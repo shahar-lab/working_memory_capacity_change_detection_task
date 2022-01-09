@@ -1,0 +1,271 @@
+    body{
+    background-attachment: fixed;
+    }
+    img {
+        height: 250px;
+        width: 200px;
+    }
+
+    p {
+        padding: 10px
+    }
+
+    img.keyboard {
+        height: 215px;
+        width: 517px;
+    }
+
+    img.fullscreen {
+        height: 150px;
+        width: 526px;
+    }
+
+    img.zoom {
+        height: 300px;
+        width: 1000px;
+    }
+
+    :root {
+        --top_middle: 0px;
+        --left_middle: 0px;
+
+        --top_a: 0px;
+        --left_a: 0px;
+        --top_b: 0px;
+        --left_b: 0px;
+        --top_c: 0px;
+        --left_c: 0px;
+
+
+        --top_d: 0px;
+        --right_d: 0px;
+        --top_e: 0px;
+        --right_e: 0px;
+        --top_f: 0px;
+        --right_f: 0px;
+
+        --bottom_g: 0px;
+        --right_g: 0px;
+        --bottom_h: 0px;
+        --right_h: 0px;
+        --bottom_i: 0px;
+        --right_i: 0px;
+
+
+        --bottom_j: 0px;
+        --left_j: 0px;
+        --bottom_k: 0px;
+        --left_k: 0px;
+        --bottom_l: 0px;
+        --left_l: 0px;
+
+       --upper1: 0px;
+       --upper2: 0px;
+       --upper3: 0px;
+
+       --lower1: 0px;
+       --lower2: 0px;
+       --lower3: 0px;
+
+        --left_card: 0px;
+        --right_card: 0px;
+        --top_card: 0px;
+
+        --top_reward: 0px;
+        --left_reward: 0px;
+    }
+
+    .fixation {
+        /* plus fixation will be in the middle of the screen*/
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 15.8px;
+    }
+
+    .reward {
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100px;
+        width: 100px;
+    }
+
+    .group {
+        height: 135px;
+        width: 487px;
+    }
+
+    .example {
+        height: 135px;
+        width: 217px;
+    }
+
+    img.card_left {
+        position: fixed;
+        height: 180px;
+        width: 130px;
+        left: var(--left_card);
+        top: var(--top_card);
+    }
+
+    img.card_right {
+        position: fixed;
+        height: 180px;
+        width: 130px;
+        right: var(--right_card);
+        top: var(--top_card);
+    }
+
+
+
+    /* we have one image in every quadrant pixels locations are from Balaban et al., 2019 */
+
+    /* first quadrant */
+    img.a {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        top: var(--top_a);
+        left: var(--left_a);
+    }
+
+    img.b {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        top: var(--top_b);
+        left: var(--left_b);
+    }
+
+    img.c {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        top: var(--top_c);
+        left: var(--left_c);
+    }
+
+    /* second quadrant */
+    img.d {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        top: var(--top_d);
+        right: var(--right_d);
+    }
+
+    img.e {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        top: var(--top_e);
+        right: var(--right_e);
+    }
+
+    img.f {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        top: var(--top_f);
+        right: var(--right_f);
+    }
+
+    /* third quadrant */
+    img.g {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        bottom: var(--bottom_g);
+        right: var(--right_g);
+    }
+
+    img.h {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        bottom: var(--bottom_h);
+        right: var(--right_h);
+    }
+
+    img.i {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        bottom: var(--bottom_i);
+        right: var(--right_i);
+    }
+
+    /* fourth quadrant */
+    img.j {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        bottom: var(--bottom_j);
+        left: var(--left_j);
+    }
+
+    img.k {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        bottom: var(--bottom_k);
+        left: var(--left_k);
+    }
+
+    img.l {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        bottom: var(--bottom_l);
+        left: var(--left_l);
+    }
+    /* locations for middle square in set size 1 */
+    img.upper1 {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        left: var(--left_middle);
+        top: var(--upper1);
+    }
+    
+    img.upper2 {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        left: var(--left_middle);
+        top: var(--upper2);
+    }
+    
+    img.upper3 {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        left: var(--left_middle);
+        top: var(--upper3);
+    }
+    
+    img.lower1 {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        left: var(--left_middle);
+        bottom: var(--lower1);
+    }
+    
+    img.lower2 {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        left: var(--left_middle);
+        bottom: var(--lower2);
+    }
+    
+    img.lower3 {
+        position: fixed;
+        height: 51.4px;
+        width: 51.4px;
+        left: var(--left_middle);
+        bottom: var(--lower3);
+    }

@@ -1,0 +1,18 @@
+{
+    "name": "squares",
+    "template":"survey",
+    "exp_id": "squares",  
+    "url": "",
+    "cognitive_atlas_task_id": "0",
+    "contributors": [
+             "Nitzan Shahar",
+             "Ido Ben Arzi",
+             "Shay Kahn",
+             "Yaniv Davidi"
+            ], 
+    "time":1,
+    "reference": [],  
+    "description": "",
+    "instructions": ""
+  
+}
