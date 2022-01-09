@@ -1,4 +1,4 @@
-This repository includes a task used to estimate working memory capacity using the change detection task.
+This repository includes a task (index.html) used to estimate working memory capacity using the change detection task.
 
 For more information about the task see (Balaban et al., 2019).
 
