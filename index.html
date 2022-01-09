@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <!-- jspych plugins-->
     <title>Squares</title>
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/jspsych.js"></script>
@@ -13,20 +14,9 @@
     <script src="plugins/jspsych-fullscreen.js"></script>
     <script src="plugins/jspsych-html-button-response.js"></script>
     <script src="plugins/jspsych-html-slider-response.js"></script>
+    <!-- css-->
     <link href="css/my_exp.css" rel="stylesheet" type="text/css">
     <link href="css/jspsych.css" rel="stylesheet" type="text/css">
-    <!-- debugging via sentry.com -->
-    <script src="https://browser.sentry-cdn.com/6.7.2/bundle.tracing.min.js"
-        integrity="sha384-wOrLFfswE3wmvwEzqgo2kc7ksrFcx4ephHugBnWW3jY8ktO8xSi5Lny58pZSpovY"
-        crossorigin="anonymous"></script>
-    <script>
-        Sentry.init({
-            dsn: "https://e930abb231a542d7b9b087bbdd7736ab@o879085.ingest.sentry.io/5831471",
-            integrations: [new Sentry.Integrations.BrowserTracing()],
-            // We recommend adjusting this value in production, or using tracesSampler
-            // for finer control
-            tracesSampleRate: 1.0,
-        });
     </script>
 </head>
 
@@ -38,8 +28,8 @@
             type: "fullscreen",
             fullscreen_mode: true
         }
-        /*this defines the css properties according to the window_screen_size*/
-
+        /*this part defines the css properties dynamicaly according to the window_screen_size
+        each of the 12 locations is determined here according to the required visual angle in pixels */
         var root = document.documentElement;
         var vis_angle_px = 105
         var square_width = 51.4
@@ -77,14 +67,6 @@
         root.style.setProperty('--lower1', window.screen.height / 2 - 3 * vis_angle_px + "px");
         root.style.setProperty('--lower2', window.screen.height / 2 - 2 * vis_angle_px + "px");
         root.style.setProperty('--lower3', window.screen.height / 2 - vis_angle_px + "px");
-
-        //---------------------------------------------------------------------------------------------
-        root.style.setProperty('--left_card', window.screen.width / 2 - 2 * vis_angle_px + "px");
-        root.style.setProperty('--right_card', window.screen.width / 2 - 2 * vis_angle_px + "px");
-        root.style.setProperty('--top_card', window.screen.height / 2 - 90 + "px");
-        root.style.setProperty('--top_reward', window.screen.height / 2 + "px");
-        root.style.setProperty('--left_reward', window.screen.width / 2 + "px");
-
         /*---------------------------------------------------- 
         Variabels for squares game
         ------------------------------------------------------*/
@@ -95,29 +77,22 @@
         /* setting the locations to randomize from */
         var locations = ["<img class='a' src=", "<img class='b' src=", "<img class='c' src=", "<img class='d' src=", "<img class='e' src=", "<img class='f' src=", "<img class='g' src=", "<img class='h' src=", "<img class='i' src=", "<img class='j' src=", "<img class='k' src=", "<img class='l' src=",]
         var locations_setsize1 = ["<img class='upper1' src=", "<img class='upper2' src=", "<img class='upper3' src=", "<img class='lower1' src=", "<img class='lower2' src=", "<img class='lower3' src="]
+        /*subject number  and time for csv saving*/
         var subN = "001"
         var IDsub = Date.now();
         /*---------------------------------------------------- 
         Functions for squares game
         ------------------------------------------------------*/
-        function download_csv(csv) {
-            var hiddenElement = document.createElement('a');
-            file_name = "WM_visual_array_" + subN + ".csv"
-            hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
-            hiddenElement.target = '_blank';
-            hiddenElement.download = file_name;
-            hiddenElement.click();
-        }
         //This function decides on a random location for the test square
         function getRandomInt(max) {
             return Math.floor(Math.random() * Math.floor(max));
         }
-        //This function picks squares to show
+        //This function picks random squares to show
         function get_squares(images, number_of_images) {
             return jsPsych.randomization.sampleWithoutReplacement(change_detection_images, number_of_images)
         }
-        /*This function picks the locations in which it will be shown 
-         It also takes care of randomizing the different quadrants   */
+        /*This function picks the locations in which the squares will be shown 
+         It also takes care of equally randomizing the different quadrants   */
         function get_locations(locations_arr, number_of_images, locations_arr1) {
             random_locations = [];
             if (number_of_images == 1) {
@@ -145,7 +120,8 @@
         }
         var condition_squares_exp = jsPsych.randomization.sampleWithoutReplacement(['4same', '4diff', '8same', '8diff'], 1)[0]
         var fixation = '<div class="fixation">+</div>'
-        /*This function downloads the data */
+
+        /*This function downloads the data locally */
         function download_csv(csv) {
             var hiddenElement = document.createElement('a');
             file_name = "WM_visual_array_" + subN + "_" + IDsub.toString() + ".csv"
@@ -208,6 +184,7 @@
                 + "Thank you!",
             choices: ['Back to instructions']
         }
+        /* the to_repeat variable defined whether the quiz is to be repeate*/
         var to_repeat_squares;
         var check_answers = {
             timeline: [if_trial_squares],
@@ -251,6 +228,7 @@
             type: 'html-keyboard-response',
             stimulus: "<p> We will now start some practice trials.<br> <b>The practice trials will also include some trials in which you will need to remember only one square to make sure you understood the instructions.</b> <br> You may already want to be ready with your fingers on '<b>s'</b> and <b>'k'</b>. <br><img class=keyboard src='images/keyboard.png'> <br> <u>Please try to be as accurate as possible for the experiment to succeed.</u> <br><br><b>Press any key to begin</b></u>",
             post_trial_gap: 1000,
+            /*removes cursor from screen*/
             on_finish: function () { document.querySelector('head').insertAdjacentHTML('beforeend', '<style id="cursor-toggle"> html { cursor: none; } </style>') },
         }
 
