@@ -2,4 +2,5 @@ This repository includes a task (index.html) used to estimate working memory cap
 
 For more information about the task see (Balaban et al., 2019).
 
-The task is implemented using jsPsych package by de Leeuw, J. R. (2015), check the jsPsych website for great tutorials on the package. To get a hold about what's going on in the task see the data_legend and code_design files.
+The task is implemented using jsPsych package by de Leeuw, J. R. (2015), check the jsPsych website for great tutorials on the package. 
+**To get a hold about what's going on in the task see the data_legend and code_design files.**
