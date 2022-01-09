@@ -4,4 +4,7 @@ Then some functions are declared for further use.
 
 Instructions block is then created, with a conditional part to ensure that participants understood everything.
 
-Then, we start declaring variables for the practice part. Also notice the mouse is dissappearing in appropriate parts using the cursor-toggle command. Then, similar variables for the test part and finally we create a procedure variable which creates a timeline for all the variables. We there put the number of repetitions as the number of trials we want.
+Then, we start declaring variables for the practice part. Also notice the mouse is dissappearing in appropriate parts using the cursor-toggle command.
+In the practice part there are trials in which only one square appears to confirm their understanding. They can continue in the task only if they have 100% success with one square. 
+
+Then, similar variables for the test part and finally we create a procedure variable which creates a timeline for all the variables. We there put the number of repetitions as the number of trials we want.
