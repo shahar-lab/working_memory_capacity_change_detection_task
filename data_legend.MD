@@ -1,4 +1,4 @@
-The code saves the following variables besides the normal ones: #cr: what are the normal variables?
+The code saves the following relevant variables:
 
 phase (practice/test) - whether it is a train or a test block
 
