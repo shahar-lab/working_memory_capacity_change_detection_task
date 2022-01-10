@@ -79,7 +79,7 @@
         var locations_setsize1 = ["<img class='upper1' src=", "<img class='upper2' src=", "<img class='upper3' src=", "<img class='lower1' src=", "<img class='lower2' src=", "<img class='lower3' src="]
         /*subject number  and time for csv saving*/
         var subN = "001"
-        var IDsub = Date.now(); #cr: the variable name should probably be date..?
+        var date = Date.now();
         /*---------------------------------------------------- 
         Functions for squares game
         ------------------------------------------------------*/
@@ -124,7 +124,7 @@
         /*This function downloads the data locally */
         function download_csv(csv) {
             var hiddenElement = document.createElement('a');
-            file_name = "WM_visual_array_" + subN + "_" + IDsub.toString() + ".csv"
+            file_name = "WM_visual_array_" + subN + "_" + date.toString() + ".csv"
             hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
             hiddenElement.target = '_blank';
             hiddenElement.download = file_name;
