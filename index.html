@@ -70,7 +70,7 @@
         /*---------------------------------------------------- 
         Variabels for squares game
         ------------------------------------------------------*/
-        /*randomly assigning the mapping of the response-keys to be ks or sk */
+        /*randomly assigning the mapping of the response-keys to be ks or sk */ //cr: what does it mean? ks? sk?
         mapping = jsPsych.randomization.sampleWithoutReplacement(['sk', 'ks'], 1)[0];
         /* getting the images to display */
         var change_detection_images = ['images/squares/black.png', 'images/squares/blue.png', 'images/squares/brown.png', 'images/squares/cyan.png', 'images/squares/green.png', 'images/squares/magenta.png', 'images/squares/orange.png', 'images/squares/red.png', 'images/squares/yellow.png']
@@ -79,7 +79,7 @@
         var locations_setsize1 = ["<img class='upper1' src=", "<img class='upper2' src=", "<img class='upper3' src=", "<img class='lower1' src=", "<img class='lower2' src=", "<img class='lower3' src="]
         /*subject number  and time for csv saving*/
         var subN = "001"
-        var IDsub = Date.now();
+        var IDsub = Date.now(); #cr: the variable name should probably be date..?
         /*---------------------------------------------------- 
         Functions for squares game
         ------------------------------------------------------*/
@@ -276,7 +276,7 @@
             data: {
                 phase: 'practice', trial_name: 'test', trial_num: function () { return current_squares_practice_trial },
                 correct_response: function () {
-                    if (condition_squares_practice[1] == 's') { //it is same condition
+                    if (condition_squares_practice[1] == 's') { //it is same condition //cr: is it work with 'S'? should it work with capsLock? or it is case sensitive?
                         key_press_num = jsPsych.pluginAPI.convertKeyCharacterToKeyCode(mapping[0])
 
                     }
@@ -289,7 +289,7 @@
                     return condition_squares_practice[0]
                 }
             },
-            on_finish: function (data) {
+            on_finish: function (data) { //cr: im not sure if those names that start with numbers are legal
                 condition_squares_practice = jsPsych.randomization.sampleWithoutReplacement(['1same', '1diff', '4same', '4diff', '8same', '8diff'], 1)[0] //now everything could be
                 var correct = false;
                 if (data.correct_response == data.key_press) {
