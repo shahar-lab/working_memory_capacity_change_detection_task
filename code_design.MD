@@ -9,5 +9,5 @@ In the practice part there are trials in which only one square appears to confir
 
 Then, similar variables for the test part and finally we create a procedure variable which creates a timeline for all the variables. We there put the number of repetitions as the number of trials we want.
 
-\\ cr: it would be helpful if you mention if the experiment is case sensitive
-\\ cr: and also where to configure the number of trials in practice and game parts
+To configure the number of trials, search for "repetitions" and update it according to the phase you wish to update.
+
