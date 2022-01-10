@@ -8,3 +8,6 @@ Then, we start declaring variables for the practice part. Also notice the mouse 
 In the practice part there are trials in which only one square appears to confirm their understanding. They can continue in the task only if they have 100% success with one square. 
 
 Then, similar variables for the test part and finally we create a procedure variable which creates a timeline for all the variables. We there put the number of repetitions as the number of trials we want.
+
+\\ cr: it would be helpful if you mention if the experiment is case sensitive
+\\ cr: and also where to configure the number of trials in practice and game parts
