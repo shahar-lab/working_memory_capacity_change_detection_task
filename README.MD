@@ -16,8 +16,8 @@ Look into the data_legend file for information about the task's output.
 
 We already ran the task online on 369 participants in two different experiments in our lab.
 
-As you can see, visual working memory capacity estimates look almost identical to these from the literature in which the task was done in-person.
-
-![Our data](https://github.com/shahar-lab/working_memory_capacity_change_detection_task/blob/main/figure2.png?raw=true)
+As you can see below, visual working memory capacity estimates look almost identical to these from the literature in which the task was done in-person.
 
 ![Luria data](https://github.com/shahar-lab/working_memory_capacity_change_detection_task/blob/main/figure3.png?raw=true)
+
+![Our data](https://github.com/shahar-lab/working_memory_capacity_change_detection_task/blob/main/figure2.png?raw=true)
