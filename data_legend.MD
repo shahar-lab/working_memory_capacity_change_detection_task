@@ -1,6 +1,8 @@
 The code saves the following relevant variables:
 
-block_type (practice/test) - whether it is a train or a test block 
+The csv output contains a row for every change in the stimulus shown to the subject. Therefore, we start by filtering the rows we are interested in, using the block type and the trial name. For example, to find the responses for the test square in the experiment part: block_type == exp and trial_name==test.
+
+block_type (practice/exp) - whether it is a train or a test block 
 
 trial_name (memory/test) - whether it is the memory array part or the test part of the task 
 
@@ -8,13 +10,13 @@ set_size (4/8) - number of shown squares in the memory array
 
 correct_response (83/75) - 83 if the correct response is "s" and 75 if it was "k"
 
-rt - response time
+rt (ms) - response time
 
 trial_num - specific for practice/test blocks 
 
 keypress - (83/75) - whether the subject pressed "s" or "k" respectively
 
-accuracy (0/1) - did the subject press the correct keypress 
+accuracy (TRUE/FALSE) - did the subject press the correct keypress 
 
 stimulus - png of the pictures used in the memory array or in the test square (depending on trial_name).
 
