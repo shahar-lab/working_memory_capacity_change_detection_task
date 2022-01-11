@@ -28,9 +28,9 @@ For example, the stimulus of the test_square may look like this:
 
 <img class='c' src=images/squares/blue.png
 
-It means that a blue square appeared in location "c", along side a fixation plus.
+It means that a blue square appeared in location "c".
 
-stimulus (color) - colors of the squares can be derived from the three first letters (blu) by sub_stringing the.
+stimulus (color) - colors of the squares can be derived from the three first letters (blu) by sub_stringing the stimulus.
 
 stimulus (location (a-l) - locations of the squares can be derived from the class part of the stimulus. There were 12 different locations, three in each quartile of the screen - across the diagonal.
 
