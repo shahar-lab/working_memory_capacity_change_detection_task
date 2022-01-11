@@ -18,11 +18,11 @@ Look into the data_legend file for information about the task's output.
 
 We already ran the task online on 369 participants in two different experiments in our lab.
 
-As you can see below, visual working memory capacity estimates look almost identical to these from the literature in which the <a href="https://pubmed.ncbi.nlm.nih.gov/31234117/">task was done in-person</a>. .
+As you can see below, visual working memory capacity estimates look almost identical to these from the literature in which the <a href="https://pubmed.ncbi.nlm.nih.gov/31234117/">task was done in-person</a>.
 
 ![data](https://github.com/shahar-lab/working_memory_capacity_change_detection_task/blob/main/figure2.png?raw=true)
 
-**Figure 2.** A histogram of visual working memory capacity estimates of 369 individuals completing the task online. The dashed black line depicts a normal distribution with the same mean and standrad deviation as the observed distribution. <a href="https://pubmed.ncbi.nlm.nih.gov/31234117/">(Balaban et al., 2019)</a>. 
+**Figure 2.** A histogram of visual working memory capacity estimates of 369 individuals completing the task online. The dashed black line depicts a normal distribution with the same mean and standrad deviation as the observed distribution.
 
 **Author**: Ido Ben Artzi
 
