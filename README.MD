@@ -2,6 +2,8 @@
 This repository includes a task (index.html) used to estimate working memory capacity using the change detection task.
 
 ![task sequence](https://github.com/shahar-lab/working_memory_capacity_change_detection_task/blob/main/figure1.png?raw=true)
+**Figure 2.** Trial sequence in the visual working memory task. To measure working memory capacity participants were asked to encode a visual array, and then to retrieve it to report whether a target square had the same or different color as the square that appeared in the same location. (A) the low load included four to-be-memorized stimuli and one target square. (B) the high load included eight to-be-memorized stimuli and one target square.
+
 For more information about the task see <a href="https://pubmed.ncbi.nlm.nih.gov/31234117/">(Balaban et al., 2019)</a>.
 
 The task is implemented using  <a href="https://www.jspsych.org/7.1/tutorials/hello-world/">jsPsych</a> package by de Leeuw, J. R. (2015), check the jsPsych website for great tutorials on the package. 
