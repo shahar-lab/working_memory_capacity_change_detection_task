@@ -25,4 +25,5 @@ As you can see below, visual working memory capacity estimates look almost ident
 **Figure 2.** A histogram of visual working memory capacity estimates. The dashed black line depicts a normal distribution with same mean and standrad deviation as the observed distribution. **(A)** Capacity estimates of 369 individuals completing the task online. **(B)** Capacity estimates of 3,849 individuals who completed the task in Roy Luria's lab, as published in <a href="https://pubmed.ncbi.nlm.nih.gov/31234117/">(Balaban et al., 2019)</a>. 
 
 **Author**: Ido Ben Artzi
+
 **Reviewer**: Gili Katabi
