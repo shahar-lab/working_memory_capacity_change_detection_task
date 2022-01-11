@@ -245,7 +245,7 @@
             choices: jsPsych.NO_KEYS,
             trial_duration: 200,
             data: {
-                phase: 'practice', trial_name: 'memory', trial_num: function () { return current_squares_practice_trial },
+                block_type: 'practice', trial_name: 'memory', trial_num: function () { return current_squares_practice_trial },
                 set_size: function () {
                     return condition_squares_practice[0]
                 }
@@ -274,7 +274,7 @@
             choices: ['s', 'k'],
             trial_duration: 6000,
             data: {
-                phase: 'practice', trial_name: 'test', trial_num: function () { return current_squares_practice_trial },
+                block_type: 'practice', trial_name: 'test', trial_num: function () { return current_squares_practice_trial },
                 correct_response: function () {
                     if (condition_squares_practice[1] == 's') { //it is same condition //cr: is it work with 'S'? should it work with capsLock? or it is case sensitive?
                         key_press_num = jsPsych.pluginAPI.convertKeyCharacterToKeyCode(mapping[0])
@@ -298,7 +298,7 @@
                 else if (data.key_press == null) {
                     correct = null;
                 }
-                data.is_correct = correct;
+                data.accuracy = correct;
                 current_squares_practice_trial += 1;
             }
         }
@@ -307,7 +307,7 @@
             type: 'html-keyboard-response',
             stimulus: function () {
                 feedback_text = 'incorrect'
-                last_trial_correct = jsPsych.data.getLastTrialData().values()[0].is_correct;
+                last_trial_correct = jsPsych.data.getLastTrialData().values()[0].accuracy;
                 if (last_trial_correct == true) {
                     feedback_text = 'correct'
                 }
@@ -344,8 +344,8 @@
                 /* Get the data from the previous trial,and calculate accuracy
                    If the participant wasn't perfect in the trials with set_size 1 - we will repeat.*/
                 to_repeat_practice_squares = false;
-                var correct_prac_square = jsPsych.data.getLastTimelineData().filter({ phase: 'practice', trial_name: 'test', set_size: '1' }).select('is_correct').sum()
-                var total_prac_square = jsPsych.data.getLastTimelineData().filter({ phase: 'practice', trial_name: 'test', set_size: '1' }).select('is_correct').count()
+                var correct_prac_square = jsPsych.data.getLastTimelineData().filter({ block_type: 'practice', trial_name: 'test', set_size: '1' }).select('accuracy').sum()
+                var total_prac_square = jsPsych.data.getLastTimelineData().filter({ block_type: 'practice', trial_name: 'test', set_size: '1' }).select('accuracy').count()
                 var prac_square_accuracy = correct_prac_square / total_prac_square;
                 if (prac_square_accuracy != 1) {
                     to_repeat_practice_squares = true;
@@ -382,7 +382,7 @@
             choices: jsPsych.NO_KEYS,
             trial_duration: 200,
             data: {
-                phase: 'exp', trial_name: 'memory', trial_num: function () { return current_squares_exp_trial }
+                block_type: 'exp', trial_name: 'memory', trial_num: function () { return current_squares_exp_trial }
             }
         }
 
@@ -401,7 +401,7 @@
             choices: ['s', 'k'],
             trial_duration: 6000,
             data: {
-                phase: 'exp', trial_name: 'test_squares', mapping: mapping, trial_num: function () { return current_squares_exp_trial },
+                block_type: 'exp', trial_name: 'test_squares', mapping: mapping, trial_num: function () { return current_squares_exp_trial },
                 correct_response: function () {
                     if (condition_squares_exp[1] == 's') { //it is same condition
                         key_press_num = jsPsych.pluginAPI.convertKeyCharacterToKeyCode(mapping[0])
@@ -428,7 +428,7 @@
                 else if (data.key_press == null) {
                     correct = null;
                 }
-                data.is_correct = correct;
+                data.accuracy = correct;
                 current_squares_exp_trial += 1;
             }
         }
@@ -457,8 +457,8 @@
             show_preload_progress_bar: true,
             on_finish: function () {
                 /*calculate accuracy */
-                var correct_test_squares = jsPsych.data.get().filter({ phase: 'exp', trial_name: 'test_squares' }).select('is_correct').sum()
-                var total_test_squares = jsPsych.data.get().filter({ phase: 'exp', trial_name: 'test_squares' }).select('is_correct').count()
+                var correct_test_squares = jsPsych.data.get().filter({ block_type: 'exp', trial_name: 'test_squares' }).select('accuracy').sum()
+                var total_test_squares = jsPsych.data.get().filter({ block_type: 'exp', trial_name: 'test_squares' }).select('accuracy').count()
                 var test_squares_accuracy = correct_test_squares / total_test_squares;
                 localStorage.squares_accuracy = test_squares_accuracy;
                 /*get data */
