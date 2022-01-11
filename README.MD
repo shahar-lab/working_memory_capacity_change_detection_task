@@ -1,5 +1,7 @@
+<h1>Working memory capacity estimation </h1>
 This repository includes a task (index.html) used to estimate working memory capacity using the change detection task.
 
+![task sequence](https://github.com/shahar-lab/working_memory_capacity_change_detection_task/blob/main/figure1.png?raw=true)
 For more information about the task see <a href="https://pubmed.ncbi.nlm.nih.gov/31234117/">(Balaban et al., 2019)</a>.
 
 The task is implemented using jsPsych package by de Leeuw, J. R. (2015), check the jsPsych website for great tutorials on the package. 
