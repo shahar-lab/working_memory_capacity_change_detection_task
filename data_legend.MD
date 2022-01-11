@@ -1,6 +1,8 @@
 <h2> Congrats on finishing running your experiment ;) </h2>
 
-The csv output contains a row for every change in the stimulus shown to the subject. Therefore, we start by filtering the rows we are interested in, using the block type and the trial name. For example, to find the responses for the test square in the experiment part: block_type == exp and trial_name==test_squares.
+The csv output contains a row for every change in the stimulus shown to the subject. Therefore, we start by filtering the rows we are interested in, using the block type and the trial name. 
+
+For example, to find the responses for the test square in the experiment part: block_type == exp and trial_name==test_squares.
 
 The code saves the following relevant variables:
 
