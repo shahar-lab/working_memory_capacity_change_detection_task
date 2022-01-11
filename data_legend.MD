@@ -25,7 +25,9 @@ The code saves the following relevant variables:
 **stimulus** - png of the pictures used in the memory array or in the test square (depending on trial_name). 
 
 For example, the stimulus of the test_square may look like this: 
+
 <img class='c' src=images/squares/blue.png
+
 It means that a blue square appeared in location "c", along side a fixation plus.
 
 stimulus (color) - colors of the squares can be derived from the three first letters (blu) by sub_stringing the.
