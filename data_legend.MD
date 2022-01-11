@@ -12,13 +12,13 @@ The csv output contains a row for every change in the stimulus shown to the subj
 
 **correct_response** (83/75) - 83 if the correct response is "s" and 75 if it was "k"
 
-**rt (ms) - response time
+**rt (ms)** - response time
 
 **trial_num** - specific for practice/test blocks 
 
 **key_press** - (83/75) - whether the subject pressed "s" or "k" respectively
 
-**accuracy (TRUE/FALSE) - did the subject press the correct keypress 
+**accuracy** (TRUE/FALSE) - did the subject press the correct keypress 
 
 **stimulus** - png of the pictures used in the memory array or in the test square (depending on trial_name). 
 
