@@ -14,7 +14,7 @@ Look into the data_legend file for information about the task's output.
 
 <h2> Data from online experiments using the task </h2>
 
-We already ran the task on 369 participants in three different instances.
+We already ran the task online on 369 participants in two different experiments in our lab.
 
 As you can see, visual working memory capacity estimates look almost identical to these from the literature in which the task was done in-person.
 
