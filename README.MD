@@ -6,6 +6,12 @@ For more information about the task see <a href="https://pubmed.ncbi.nlm.nih.gov
 
 The task is implemented using  <a href="https://www.jspsych.org/7.1/tutorials/hello-world/">jsPsych</a> package by de Leeuw, J. R. (2015), check the jsPsych website for great tutorials on the package. 
 
-**To get a hold about what's going on in the task see the data_legend and code_design files.**
+You may run the task using an IDE like visual studio code. Just open the folder, open the index.html file, and then RUN the script without debugging.
 
-You may run the task using an IDE like visual studio code, open the folder, open the index.html file, and then RUN the script without debugging.
+Check the code_design file if you want to make some changes in the design. 
+
+Look into the data_legend file for information about the task's output.
+
+<h2> Data from online experiments using the task </h2>
+
+
