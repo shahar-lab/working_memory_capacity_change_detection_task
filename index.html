@@ -262,7 +262,7 @@
         var test_practice = {
             type: "html-keyboard-response",
             stimulus: function () {
-                rand_num = getRandomInt(number_of_images - 1)
+                rand_num = getRandomInt(number_of_images)
                 if (condition_squares_practice[1] == 's') { /* it is the same condition */
                     square = current_locations[rand_num] + change_detection_images[rand_num] + ">"
                 }
@@ -389,7 +389,7 @@
         var test = {
             type: "html-keyboard-response",
             stimulus: function () {
-                rand_num = getRandomInt(number_of_images - 1)
+                rand_num = getRandomInt(number_of_images)
                 if (condition_squares_exp[1] == 's') { /* it is the same condition */
                     square = current_locations[rand_num] + change_detection_images[rand_num] + ">"
                 }
