@@ -17,15 +17,6 @@
     <!-- css-->
     <link href="css/my_exp.css" rel="stylesheet" type="text/css">
     <link href="css/jspsych.css" rel="stylesheet" type="text/css">
-    <!-- pavlovia-->
-    <script type="text/javascript" src="lib/vendors/jspsych-6.0.0/jspsych.js"></script>
-	<link rel="stylesheet" type="text/css" href="lib/vendors/jspsych-6.0.0/css/jspsych.css"/>
-
-	<script type="text/javascript" src="lib/vendors/jspsych-6.0.0/plugins/jspsych-html-keyboard-response.js"></script>
-	<script type="text/javascript" src="lib/vendors/jspsych-6.0.0/plugins/jspsych-image-keyboard-response.js"></script>
-
-	<script type="text/javascript" src="lib/vendors/jquery-2.2.0.min.js"></script>
-	<script type="text/javascript" src="lib/jspsych-pavlovia-3.0.0.js"></script>
 </head>
 
 <body>
@@ -85,8 +76,17 @@
         /* setting the locations to randomize from */
         var locations = ["<img class='a' src=", "<img class='b' src=", "<img class='c' src=", "<img class='d' src=", "<img class='e' src=", "<img class='f' src=", "<img class='g' src=", "<img class='h' src=", "<img class='i' src=", "<img class='j' src=", "<img class='k' src=", "<img class='l' src=",]
         var locations_setsize1 = ["<img class='upper1' src=", "<img class='upper2' src=", "<img class='upper3' src=", "<img class='lower1' src=", "<img class='lower2' src=", "<img class='lower3' src="]
+        
+        var subjectNumber = {type: 'survey-text',
+                            questions:[{prompt: 'אנא הכנס מספר נבדק', placeholder: '1234', required: true, name:'subject'}]
+        }
+
+        var sessionNumber = {type: 'survey-text',
+                            questions:[{prompt: 'אנא הכנס מספר סשן', placeholder: '1', required: true, name:'session'}]
+        }
+
         /*subject number  and time for csv saving*/
-        var subN = "001"
+        //var subN = "001"
         var date = Date.now();
         /*---------------------------------------------------- 
         Functions for squares game
@@ -130,7 +130,7 @@
         var fixation = '<div class="fixation">+</div>'
 
         /*This function downloads the data locally */
-        function download_csv(csv) {
+        function download_csv(csv,subN) {
             var hiddenElement = document.createElement('a');
             file_name = "WM_visual_array_" + subN + "_" + date.toString() + ".csv"
             hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
@@ -142,13 +142,11 @@
         Timeline for squares starts
         ------------------------------------------------------*/
         var timeline = [];
-        /* init connection with pavlovia.org */
-        var pavlovia_init = {
-            type: "pavlovia",
-            command: "init"
-        };
-        timeline.push(pavlovia_init);
         timeline.push(enter_fullscreen)
+        timeline.push(subjectNumber)
+        timeline.push(sessionNumber)
+        
+
         /*---------------------------------------------------- 
         Start instructions variabels
         ------------------------------------------------------*/
@@ -336,7 +334,7 @@
 
         var demo_procedure_squares = {
             timeline: [fixation_memory, memory_practice, fixation_retention, test_practice, feedback_squares],
-            repetitions: 15 //3.5sec per trial*15 =52.5sec
+            repetitions: 1//5 //3.5sec per trial*15 =52.5sec
         }
 
         var if_trial_practice_squares = {
@@ -454,19 +452,14 @@
 
         var test_procedure_squares = {
             timeline: [fixation_memory, memory, fixation_retention, test, feedback_squares],
-            repetitions: 120 //3.5sec per trial per 120 trials= 420sec
+            repetitions: 3 //120 //3.5sec per trial per 120 trials= 420sec
         }
 
         var full_procedure_squares = {
-            timeline: [instructions_squares_loop, practice_squares_loop, start_exp_squares, test_procedure_squares, finish_exp_squares]
+            timeline: [practice_squares_loop, start_exp_squares, test_procedure_squares, finish_exp_squares]
+            //timeline: [instructions_squares_loop, practice_squares_loop, start_exp_squares, test_procedure_squares, finish_exp_squares]
         } //instructions takes 60sec total
         timeline.push(full_procedure_squares)
-        /* finish connection with pavlovia.org */
-        var pavlovia_finish = {
-            type: "pavlovia",
-            command: "finish"
-            };
-        timeline.push(pavlovia_finish);
         /*---------------------------------------------------- 
               Define init for the whole experiment
               ------------------------------------------------------*/
@@ -480,8 +473,14 @@
                 var total_test_squares = jsPsych.data.get().filter({ block_type: 'exp', trial_name: 'test_squares' }).select('accuracy').count()
                 var test_squares_accuracy = correct_test_squares / total_test_squares;
                 localStorage.squares_accuracy = test_squares_accuracy;
+                
+                var subNum = JSON.parse(jsPsych.data.get().filter({trial_index: 1}).select('responses').values[0])['subject']
+                var sessionNumber = JSON.parse(jsPsych.data.get().filter({trial_index: 2}).select('responses').values[0])['session']
+
+                jsPsych.data.addProperties({subject:subNum})
+                jsPsych.data.addProperties({session:sessionNumber})
                 /*get data */
-                download_csv(jsPsych.data.get().csv())
+                download_csv(jsPsych.data.get().csv(),subNum)
             }
         });
 
