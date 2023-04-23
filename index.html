@@ -334,7 +334,7 @@
 
         var demo_procedure_squares = {
             timeline: [fixation_memory, memory_practice, fixation_retention, test_practice, feedback_squares],
-            repetitions: 1//5 //3.5sec per trial*15 =52.5sec
+            repetitions: 5 //3.5sec per trial*15 =52.5sec
         }
 
         var if_trial_practice_squares = {
@@ -452,12 +452,12 @@
 
         var test_procedure_squares = {
             timeline: [fixation_memory, memory, fixation_retention, test, feedback_squares],
-            repetitions: 3 //120 //3.5sec per trial per 120 trials= 420sec
+            repetitions: 120 //3.5sec per trial per 120 trials= 420sec
         }
 
         var full_procedure_squares = {
-            timeline: [practice_squares_loop, start_exp_squares, test_procedure_squares, finish_exp_squares]
-            //timeline: [instructions_squares_loop, practice_squares_loop, start_exp_squares, test_procedure_squares, finish_exp_squares]
+            //timeline: [practice_squares_loop, start_exp_squares, test_procedure_squares, finish_exp_squares]
+            timeline: [instructions_squares_loop, practice_squares_loop, start_exp_squares, test_procedure_squares, finish_exp_squares]
         } //instructions takes 60sec total
         timeline.push(full_procedure_squares)
         /*---------------------------------------------------- 
